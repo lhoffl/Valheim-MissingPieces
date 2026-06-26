@@ -35,7 +35,15 @@ public class CustomInteract : MonoBehaviour, Hoverable, Interactable
 
     public string GetHoverText()
     {
-        return Localization.instance.Localize($"{Name}\n[<color=yellow><b>$KEY_Use</b></color>] {DefaultInteract}\n[<color=yellow><b>Shift $KEY_Use</b></color>] {AlternateInteract}");
+        string returnText = Container.GetHoverText();
+        if (!Container.m_checkGuardStone || PrivateArea.CheckAccess(base.transform.position, 0f, flash: false))
+        {
+            bool gamepad = ZInput.IsNonClassicFunctionality() && ZInput.IsGamepadActive();
+            string altKey = gamepad ? "$KEY_AltKeys" : "$KEY_AltPlace";
+            returnText += Localization.instance.Localize($"\n[<color=yellow><b>{altKey} + $KEY_Use</b></color>] {AlternateInteract}");
+        }
+
+        return returnText;
     }
 
     public string GetHoverName()

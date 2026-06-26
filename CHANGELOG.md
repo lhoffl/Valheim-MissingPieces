@@ -1,3 +1,8 @@
+## 2.2.3
+
+* Update for hover text display changes from vanilla for chests.
+* Improved mod compatibility with other mods that change the hover text for containers.
+
 ## 2.2.2
 
 * Added missing effects for wooden drawer.
