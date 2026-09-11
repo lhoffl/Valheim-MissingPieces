@@ -51,6 +51,11 @@ public class CustomInteract : MonoBehaviour, Hoverable, Interactable
         return Localization.instance.Localize(Name);
     }
 
+    public float GetHoverOffset()
+    {
+        return Container.GetHoverOffset();
+    }
+
     public bool UseItem(Humanoid user, ItemDrop.ItemData item)
     {
         return false;
