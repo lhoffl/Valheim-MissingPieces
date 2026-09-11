@@ -1,3 +1,7 @@
+## 2.2.4
+
+* Update for Valheim 1.0: fixed wooden drawer chests not opening.
+
 ## 2.2.3
 
 * Update for hover text display changes from vanilla for chests.
